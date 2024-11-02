@@ -1,7 +1,8 @@
 SQLAlchemy==2.0.30
 psycopg2-binary==2.9.9
-flask 
+flask
 pydantic
 numpy
 pandas
 flask-cors
+python-dotenv

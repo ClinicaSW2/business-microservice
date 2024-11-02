@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:13
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+      PGPORT: 5433  # Cambiar el puerto interno de PostgreSQL
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./database/db.sql:/docker-entrypoint-initdb.d/db.sql
+    ports:
+      - "5433:5433"  # Mapea el puerto externo 5433 al puerto interno 5433
+    networks:
+      - backend-network
+    restart: always
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      DB_USER: ${DB_USER}
+      DB_PASSWORD: ${DB_PASSWORD}
+      DB_HOST: db
+      DB_DATABASE: ${DB_DATABASE}
+      DB_PORT: 5433  # Puerto actualizado para que coincida con el servicio 'db'
+      PORT: 5000
+    ports:
+      - "5000:5000"
+    depends_on:
+      - db
+    networks:
+      - backend-network
+    restart: always
+
+networks:
+  backend-network:
+
+volumes:
+  pgdata:

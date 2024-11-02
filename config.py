@@ -1,2 +1,4 @@
+import os
+
 class Config:
-    urlDB = "postgresql://postgres:12345678@localhost:5432/bussines_medical"
+    urlDB = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}:{os.getenv('DB_PORT')}/{os.getenv('DB_DATABASE')}"

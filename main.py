@@ -6,7 +6,6 @@ from flask_cors import CORS
 from controllerReservation import  get_especialidades,promedio_atencion,suma_cantidad_mes_anioByEspecialidad,promedio_atencionF,promedio_atencionM
 
 
-
 app = Flask(__name__)
 CORS(app)  # Esto permitirá todas las solicitudes CORS desde cualquier origen
 

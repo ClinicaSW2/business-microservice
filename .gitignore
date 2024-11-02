@@ -1,0 +1,75 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+
+# Environment variables
+.env
+.env*.local
+
+# Virtual environment
+.venv/
+venv/
+
+# Byte-compiled / optimized / DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints
+
+# macOS
+.DS_Store
+
+# Logs and debug files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Test coverage
+.coverage
+htmlcov/
+.tox/
+.cache
+.pytest_cache/
+
+# mypy
+.mypy_cache/
+.dmypy.json
+compiled/
+
+# Local dev / build files
+build/
+dist/
+lib/  # Ignorar la carpeta lib
+*.egg-info/
+.eggs
+
+# Binary files
+bin/
+*.pem
+
+# Vercel
+.vercel/
+
+# Ignore Yarn and Node.js files (if used alongside Python)
+node_modules/
+.pnp
+.pnp.js
+yarn.lock
+yarn-debug.log*
+yarn-error.log*
+
+# Misc
+*.tsbuildinfo
+next-env.d.ts
